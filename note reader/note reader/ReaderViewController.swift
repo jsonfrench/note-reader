@@ -25,6 +25,9 @@ class ReaderViewController: UIViewController {
         print("view loaded!")
     }
     
+    var previous_index = 0
+    
+    
     @IBAction func moveNote(_ sender: Any) {
         //print("button pressed!")
         //note.center = CGPoint(x: 150.0, y: Double.random(in: 150...350))
@@ -34,6 +37,12 @@ class ReaderViewController: UIViewController {
         //print("step", step)
         //note_top.constant = step //Double.random(in: 40...41)
         var note_index:Int = Int.random(in: 0...note_positions.count-1)
+        print("index:",note_index,"previous:",previous_index)
+        if note_index == previous_index {
+            note_index = (note_index + note_positions.count/2)%note_positions.count
+            print("avoided repeat! new index:",note_index)
+        }
+        previous_index = note_index
         note_top.constant = note_positions[note_index]
         note_letter.text = note_values[note_index]
     }
