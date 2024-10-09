@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="rYr-gL-vyi">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reader View Controller-->
+        <scene sceneID="INc-XF-Snh">
+            <objects>
+                <viewController id="rYr-gL-vyi" customClass="ReaderViewController" customModule="note_reader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5z6-5g-tjo">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="GTk-V3-J8O">
+                                <rect key="frame" x="128" y="109" width="137" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="ICg-yo-khk"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="staff" translatesAutoresizingMaskIntoConstraints="NO" id="1tK-Y4-Q3h">
+                                <rect key="frame" x="0.0" y="109" width="393" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="KZD-XU-Zmn"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1P6-Sd-9je" userLabel="buttons">
+                                <rect key="frame" x="0.0" y="718" width="393" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ptw-Vp-TZa" userLabel="hide note">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="100"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Hide Note">
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" systemColor="systemGray5Color"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="hide_note:" destination="rYr-gL-vyi" eventType="touchUpInside" id="H3g-pS-RmS"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8Y-Ii-6i4" userLabel="new note">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="100"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Next Note">
+                                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                                            <color key="baseBackgroundColor" systemColor="systemGray3Color"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="button:" destination="k6m-h1-UG4" eventType="touchUpInside" id="cnx-Rt-lgW"/>
+                                            <action selector="moveNote:" destination="rYr-gL-vyi" eventType="touchUpInside" id="FCz-hg-prp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Hjm-kU-H6q"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bwA-F7-VMc" userLabel="Note Letter">
+                                <rect key="frame" x="84" y="443" width="225" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="Lss-Nh-gpn"/>
+                                    <constraint firstAttribute="width" secondItem="bwA-F7-VMc" secondAttribute="height" multiplier="1:1" id="WjD-D0-4Kg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="200"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AVf-0U-OLQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="AVf-0U-OLQ" firstAttribute="trailing" secondItem="1P6-Sd-9je" secondAttribute="trailing" id="Gez-4D-gQF"/>
+                            <constraint firstItem="AVf-0U-OLQ" firstAttribute="bottom" secondItem="1P6-Sd-9je" secondAttribute="bottom" id="LqZ-8w-Hab"/>
+                            <constraint firstItem="GTk-V3-J8O" firstAttribute="top" secondItem="AVf-0U-OLQ" secondAttribute="top" constant="50" id="OmO-AX-rww"/>
+                            <constraint firstItem="1tK-Y4-Q3h" firstAttribute="leading" secondItem="AVf-0U-OLQ" secondAttribute="leading" id="Pbw-E6-eW3"/>
+                            <constraint firstItem="GTk-V3-J8O" firstAttribute="centerX" secondItem="5z6-5g-tjo" secondAttribute="centerX" id="aEE-MI-syk"/>
+                            <constraint firstItem="1tK-Y4-Q3h" firstAttribute="top" secondItem="AVf-0U-OLQ" secondAttribute="top" constant="50" id="awu-6r-zNI"/>
+                            <constraint firstItem="AVf-0U-OLQ" firstAttribute="trailing" secondItem="1tK-Y4-Q3h" secondAttribute="trailing" id="f8T-rR-gME"/>
+                            <constraint firstItem="1P6-Sd-9je" firstAttribute="top" secondItem="bwA-F7-VMc" secondAttribute="bottom" constant="50" id="frf-QK-ERp"/>
+                            <constraint firstItem="bwA-F7-VMc" firstAttribute="centerX" secondItem="5z6-5g-tjo" secondAttribute="centerX" id="pbv-ce-1ID"/>
+                            <constraint firstItem="1P6-Sd-9je" firstAttribute="leading" secondItem="AVf-0U-OLQ" secondAttribute="leading" id="yLj-wj-r3B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hide_note" destination="Ptw-Vp-TZa" id="W7L-LX-LIt"/>
+                        <outlet property="new_note" destination="P8Y-Ii-6i4" id="mw8-0g-rGE"/>
+                        <outlet property="note" destination="GTk-V3-J8O" id="LR5-bW-nZE"/>
+                        <outlet property="note_letter" destination="bwA-F7-VMc" id="WPd-An-b8c"/>
+                        <outlet property="note_top" destination="OmO-AX-rww" id="H8b-jI-FEq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95n-fY-9WE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="k6m-h1-UG4" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="391.60305343511448" y="72.535211267605632"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="note" width="137" height="274"/>
+        <image name="staff" width="347" height="315"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.78039215689999997" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.8980392157" green="0.8980392157" blue="0.91764705879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
